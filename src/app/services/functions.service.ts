@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Features } from '../classes/features';
 import { Services } from '../classes/services';
 import { Clients } from '../classes/clients';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,41 +14,50 @@ export class FunctionsService {
   clients: Clients[] = [];
   constructor(private apiCaller: HttpClient) { }
 
-  getClients = () => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getClients').subscribe((res: any) => {
-      const client = new Clients(
-        res._id,
-        res.client_img
-      );
+  getClients = (): void => {
+    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getClients')
+      .subscribe((res: any) => {
+        for (let i = 0; i < res.length; i++) {
+          const client = new Clients(
+            res[i]._id,
+            res[i].client_img
+          );
 
-      this.clients.push(client);
-    });
+          this.clients.push(client);
+        }
+      });
   }
 
-  getFeatures = () => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getFeatures').subscribe((res: any) => {
-      const feature = new Features(
-        res._id,
-        res.feature_title,
-        res.feature_description,
-        res.feature_img
-      );
+  getFeatures = (): void => {
+    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getFeatures')
+      .subscribe((res: any) => {
+        for (let i = 0; i < res.length; i++) {
+          const feature = new Features(
+            res[i]._id,
+            res[i].feature_title,
+            res[i].feature_description,
+            res[i].feature_img
+          );
 
-      this.features.push(feature);
-    });
+          this.features.push(feature);
+        }
+      });
   }
 
-  getServices = () => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getServices').subscribe((res: any) => {
-      const service = new Services(
-        res._id,
-        res.service_title,
-        res.service_description,
-        res.service_icon,
-        res.color
-      );
+  getServices = (): void => {
+    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getServices')
+      .subscribe((res: any) => {
+        for (let i = 0; i < res.length; i++) {
+          const service = new Services(
+            res[i]._id,
+            res[i].service_title,
+            res[i].service_description,
+            res[i].service_icon,
+            res[i].color
+          );
 
-      this.services.push(service);
-    });
+          this.services.push(service);
+        }
+      });
   }
 }

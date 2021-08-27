@@ -5,7 +5,7 @@
       <div class="col-lg-6 mt-2 mb-tg-0 order-2 order-lg-1">
         <ul class="nav nav-tabs flex-column">
           <li class="nav-item" data-aos="fade-up" *ngFor="let feature of this.func.features; let i = index">
-            <a [class.active.show]="i === 1" class="nav-link" data-bs-toggle="tab" [attr.href]="'#tab-'+i">
+            <a [class.active]="i === 0" class="nav-link" data-bs-toggle="tab" [attr.href]="'#tab-'+i">
               <h4>{{feature.featureTitle}}</h4>
               <p>{{feature.featureDescription}}</p>
             </a>
@@ -14,7 +14,7 @@
       </div>
       <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in">
         <div class="tab-content">
-          <div [class.active.show]="i === 1" class="tab-pane" *ngFor="let feature of this.func.features; let i = index"
+          <div [class.active]="i === 0" class="tab-pane" *ngFor="let feature of this.func.features; let i = index"
             [attr.id]="'tab-' + i">
             <figure>
               <img src="{{feature.featureImg}}" alt="" class="img-fluid">
