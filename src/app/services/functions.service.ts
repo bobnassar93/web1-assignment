@@ -14,8 +14,8 @@ export class FunctionsService {
   clients: Clients[] = [];
   constructor(private apiCaller: HttpClient) { }
 
-  getClients = (): void => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getClients')
+  getClients = async (): Promise<void> => {
+    await this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getClients')
       .subscribe((res: any) => {
         for (let i = 0; i < res.length; i++) {
           const client = new Clients(
@@ -28,8 +28,8 @@ export class FunctionsService {
       });
   }
 
-  getFeatures = (): void => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getFeatures')
+  getFeatures = async (): Promise<void> => {
+    await this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getFeatures')
       .subscribe((res: any) => {
         for (let i = 0; i < res.length; i++) {
           const feature = new Features(
@@ -44,8 +44,8 @@ export class FunctionsService {
       });
   }
 
-  getServices = (): void => {
-    this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getServices')
+  getServices = async (): Promise<void> => {
+    await this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getServices')
       .subscribe((res: any) => {
         for (let i = 0; i < res.length; i++) {
           const service = new Services(
