@@ -12,6 +12,12 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { CtaComponent } from './cta/cta.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { TeamComponent } from './team/team.component';
+import { ClientsComponent } from './clients/clients.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { FaqComponent } from './faq/faq.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     OurServicesComponent,
     PortfolioComponent,
     CtaComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    TeamComponent,
+    ClientsComponent,
+    PricingComponent,
+    FaqComponent,
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
