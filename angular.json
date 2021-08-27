@@ -27,9 +27,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/my_assets/vendor/aos/aos.css",
+              "src/my_assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/my_assets/vendor/bootstrap-icons/bootstrap-icons.css",
+              "src/my_assets/vendor/boxicons/css/boxicons.min.css",
+              "src/my_assets/vendor/glightbox/css/glightbox.min.css",
+              "src/my_assets/vendor/swiper/swiper-bundle.min.css",
+              "src/my_assets/css/style.css"
             ],
             "scripts": [
+              "src/my_assets/vendor/aos/aos.js",
+              "src/my_assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/my_assets/vendor/glightbox/js/glightbox.min.js",
+              "src/my_assets/vendor/isotope-layout/isotope.pkgd.min.js",
+              "src/my_assets/vendor/php-email-form/validate.js",
+              "src/my_assets/vendor/swiper/swiper-bundle.min.js",
+              "src/my_assets/js/main.js"
             ]
           },
           "configurations": {
