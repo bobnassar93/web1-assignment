@@ -36,4 +36,15 @@ export class CustomJSService {
   onscroll = (el: any, listener: any) => {
     el.addEventListener('scroll', listener)
   }
+
+  scrollto = (el: any) => {
+    let header = this.select('#header')
+    let offset = header.offsetHeight
+
+    let elementPos = this.select(el).offsetTop
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: 'smooth'
+    })
+  }
 }

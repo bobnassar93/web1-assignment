@@ -18,6 +18,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { CustomJSService } from './services/custom-js.service';
 
 @NgModule({
   declarations: [
