@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class CustomJSService {
 
+  AOS!: any;
+  Isotope!: any;
   constructor() { }
 
   select = (el: any, all = false) => {

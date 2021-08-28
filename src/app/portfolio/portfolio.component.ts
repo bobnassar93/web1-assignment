@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FunctionsService } from '../services/functions.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public func: FunctionsService
+  ) { }
 
   ngOnInit(): void {
+    this.func.getFilters();
   }
 
 }
