@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomJSService } from 'src/app/services/custom-js.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private custom: CustomJSService) {
+
+  }
 
   ngOnInit(): void {
+    this.custom.on('click', '.mobile-nav-toggle', (e: any) => {
+      this.custom.select('#navbar').classList.toggle('navbar-mobile')
+      e.target.classList.toggle('bi-list')
+      e.target.classList.toggle('bi-x')
+    })
   }
 
 }
