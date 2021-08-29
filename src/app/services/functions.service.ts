@@ -5,6 +5,7 @@ import { Services } from '../classes/services';
 import { Clients } from '../classes/clients';
 import { Filters } from '../classes/filters';
 import { Portfolio } from '../classes/portfolio';
+import { CustomJSService } from './custom-js.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,10 @@ export class FunctionsService {
   filters: Filters[] = [];
   portfolios: Portfolio[] = [];
 
-  constructor(private apiCaller: HttpClient) { }
+  constructor(
+    private apiCaller: HttpClient,
+    private customJS: CustomJSService
+  ) { }
 
   getClients = (): void => {
     this.apiCaller.get('https://web1-assignment-heroku.herokuapp.com/getClients')
@@ -94,10 +98,8 @@ export class FunctionsService {
             res[i].details,
             res[i].portfolio_img
           );
-
           this.portfolios.push(portfolio);
         }
       });
-
   }
 }

@@ -33,8 +33,8 @@
               "src/my_assets/vendor/bootstrap-icons/bootstrap-icons.css",
               "src/my_assets/vendor/boxicons/css/boxicons.min.css",
               "src/my_assets/vendor/glightbox/css/glightbox.min.css",
-              "src/my_assets/vendor/swiper/swiper-bundle.min.css",
-              "src/my_assets/css/style.css"
+              "src/my_assets/css/style.css",
+              "node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": [
               "src/my_assets/vendor/aos/aos.js",

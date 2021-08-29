@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import * as Isotope from 'isotope-layout';
+import * as AOS from 'aos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomJSService {
 
-  AOS!: any;
-  Isotope!: any;
-  constructor() { }
+  constructor(
+  ) { }
 
   select = (el: any, all = false) => {
     el = el.trim()
@@ -48,5 +49,33 @@ export class CustomJSService {
       top: elementPos - offset,
       behavior: 'smooth'
     })
+  }
+
+
+  initIsotope = () => {
+    let portfolioContainer = this.select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = this.select('#portfolio-flters li', true);
+
+      this.on('click', '#portfolio-flters li', (e: any) => {
+        e.preventDefault();
+        portfolioFilters.forEach((el: any) => {
+          el.classList.remove('filter-active');
+        });
+        e.target.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: e.target.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', () => {
+          AOS.refresh()
+        });
+      }, true);
+    }
   }
 }
