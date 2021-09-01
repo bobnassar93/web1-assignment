@@ -34,7 +34,7 @@ export class CustomJSService {
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   onscroll = (el: any, listener: any) => {
     el.addEventListener('scroll', listener)
@@ -72,10 +72,9 @@ export class CustomJSService {
         portfolioIsotope.arrange({
           filter: e.target.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', () => {
-          AOS.refresh()
-        });
       }, true);
+
+      AOS.refresh();
     }
   }
 }
